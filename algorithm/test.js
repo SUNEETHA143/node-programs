@@ -1,25 +1,26 @@
+function binaryConvert() {
+        
+    let count = 0;
+    let number = 32 ;
+    if (number == 0)
+        return false;
+     
+    while (number != 1)
+    {
+        if (number % 2 != 0) {
+            //return false;
+            console.log('not power of 2');
+            
+        }
+           
+        number = number / 2;
 
-var utility = require('/home/bridgeit/ram/utility/Utility.js');
-let count =0;
+        count++;
+    }
 
-let initial =0;
-let final = 0;
-
-if(count == 0) {
-    initial = utility.getTime();
-    console.log(initial);
+    console.log(count);
     
-    count++
-}
+    console.log('power of 2');
 
-if(count == 1) {
-    final = utility.getTime();
-    console.log(final);
-    
-}
-
-let elapsed = final -initial ;
-
-console.log(elapsed/1000);
-
-
+  }
+    binaryConvert();

@@ -26,7 +26,7 @@
   ************************************************************************************/
 let prompt = require('prompt-sync')();
 
-let utility = require('/home/bridgeit/ram/utility/algorithmUtility.js');
+let utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/algorithmUtility.js');
 
 let re = /[a-zA-Z]/g;
 let re2 = /[!@#$%^&*().<>+-/*"'`~]/g;
