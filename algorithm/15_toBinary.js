@@ -11,6 +11,8 @@ function toBinary() {
 
     if(integer.search(re)==-1 && integer.search(re2)==-1 && integer >=0 && integer < 2147483648) {
 
+        //let binary = utility.toBinary(integer);
+
         let binary = utility.toBinary(integer);
 
         console.log(binary);

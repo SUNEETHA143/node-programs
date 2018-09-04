@@ -50,6 +50,8 @@ function palindrom() {
         if(num1 < num2){
             let palin = [];
 
+            let unique_array = [];
+
     /************************************************/  
              prime = utility.checkPrime(num1,num2);
 
@@ -63,17 +65,63 @@ function palindrom() {
              console.log(prime);
 
     /************************************************/
+
+
+    /************************************************/
+    let anagram = [];
+    for(let i=0; i<prime.length-1 ; i++) {
+
+        for(let j=i+1 ; j< prime.length ; j++) {
+
+            index1 = prime[i].toString();
+
+            index2 = prime[j].toString();
+   
+            let res1 = utility.anagrams(index1,index2);
+   
+            if (res1) {
+                anagram.push(prime[i]);
+                anagram.push(prime[j]);
+
+                console.log();
+                console.log(prime[i] + ' and '+ prime[j] + ' are anagrams');
+            }
+        }
+    }
+
+    removeDuplicates(anagram);
+
+    
+
+    function removeDuplicates(arr){
+
+        
+        for(let i = 0;i < arr.length; i++){
+
+            if(unique_array.indexOf(arr[i]) == -1){
+
+                unique_array.push(arr[i])
+            }
+        }
+
+        console.log();
+        
+        console.log(unique_array);
+         
+    }
+    
+  /*************************************************/
     
     /************************************************/
-    //to get palindrom numbers from prime numbers
+    //to get palindrom numbers from Anagram numbers
 
-            for(let i=0; i<prime.length; i++) {
+            for(let i=0; i<unique_array.length; i++) {
 
-                let temp = utility.palindrom(prime[i]);
+                let temp = utility.palindrom(unique_array[i]);
     
-                if (temp == true && prime[i] > 9) {
+                if (temp == true && unique_array[i] > 9) {
                     
-                    palin.push(prime[i]);
+                    palin.push(unique_array[i]);
 
                 }
                 
@@ -87,26 +135,10 @@ function palindrom() {
 
     /************************************************/
 
-            for(let i=0; i<prime.length-1 ; i++) {
-
-                for(let j=i+1 ; j< prime.length ; j++) {
-       
-                    index1 = prime[i].toString();
-       
-                    index2 = prime[j].toString();
-           
-                    let res1 = utility.anagrams(index1,index2);
-           
-                    if (res1) {
-       
-                        console.log();
-                        console.log(prime[i] + ' and '+ prime[j] + ' are anagrams');
-                    }
-                }
-            }
-          
                  
         }
+
+    
 
     /************************************************/
     // to get result when number1 greater than number2
@@ -115,6 +147,8 @@ function palindrom() {
         else if(num1 > num2){
 
             let palin = [];
+
+            let unique_array = [];
 
     /************************************************/
 
@@ -125,48 +159,73 @@ function palindrom() {
 
     /************************************************/
 
-    /************************************************/
-
-            for(let i=0; i<prime.length; i++) {
-
-                let temp = utility.palindrom(prime[i]);
+     /************************************************/
+     let anagram = [];
+     for(let i=0; i<prime.length-1 ; i++) {
+ 
+         for(let j=i+1 ; j< prime.length ; j++) {
+ 
+             index1 = prime[i].toString();
+ 
+             index2 = prime[j].toString();
     
-                if (temp == true && prime[i] > 9) {
-                    
-                    palin.push(prime[i]);
-
-                }
-                
-            }
-
-            console.log('palindrom numbers');
-            console.log(palin);
+             let res1 = utility.anagrams(index1,index2);
     
-    /************************************************/
-
-    /************************************************/
-
-            for(let i=0; i<prime.length-1 ; i++) {
-
-                for(let j=i+1 ; j< prime.length ; j++) {
-       
-                    index1 = prime[i].toString();
-       
-                    index2 = prime[j].toString();
-           
-                    let res1 = utility.anagrams(index1,index2);
-           
-                    if (res1) {
-       
-                        console.log();
-                        console.log(prime[i] + ' and '+ prime[j] + ' are anagrams');
-                    }
-           
-       
-                }
-       
-       
-            }
+             if (res1) {
+                 anagram.push(prime[i]);
+                 anagram.push(prime[j]);
+ 
+                 console.log();
+                 console.log(prime[i] + ' and '+ prime[j] + ' are anagrams');
+             }
+         }
+     }
+ 
+     removeDuplicates(anagram);
+ 
+     
+ 
+     function removeDuplicates(arr){
+ 
+         
+         for(let i = 0;i < arr.length; i++){
+ 
+             if(unique_array.indexOf(arr[i]) == -1){
+ 
+                 unique_array.push(arr[i])
+             }
+         }
+ 
+         console.log();
+         console.log(unique_array);
+          
+     }
+     
+   /*************************************************/
+     
+     /************************************************/
+     //to get palindrom numbers from Anagram numbers
+ 
+             for(let i=0; i<unique_array.length; i++) {
+ 
+                 let temp = utility.palindrom(unique_array[i]);
+     
+                 if (temp == true && unique_array[i] > 9) {
+                     
+                     palin.push(unique_array[i]);
+ 
+                 }
+                 
+             }
+ 
+             console.log();
+             
+             console.log('palindrom numbers');
+             console.log();
+             console.log(palin);
+ 
+     /************************************************/
+ 
 
        /************************************************/
 

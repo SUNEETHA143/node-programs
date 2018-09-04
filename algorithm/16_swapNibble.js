@@ -9,16 +9,54 @@ function toSwap() {
 
     let integer = prompt('enter a number') 
 
-    if(integer.search(re)==-1 && integer.search(re2)==-1 && integer >=0 && integer < 2147483648) {
+    if(integer.search(re)==-1 && integer.search(re2)==-1 && integer > 15 && integer <= 255 ) {
 
         let binary = utility.toBinary(integer);
 
         console.log(binary);
 
-        let swap = utility.toSwap(integer);
+        let swap = 0;
 
+        if(binary.length == 8) {
+
+            swap = utility.toSwap(binary);
+
+        }
+
+        else if(binary.length == 7){
+
+            binary = (0+binary);
+
+            swap = utility.toSwap(binary);
+
+        }
+
+        else if(binary.length == 6){
+
+            binary = (0+binary);
+            binary = (0+binary);
+
+            swap = utility.toSwap(binary);
+
+        }
+
+        else if(binary.length == 5){
+
+            binary = (0+binary);
+            binary = (0+binary);
+            binary = (0+binary);
+
+            swap = utility.toSwap(binary);
+
+        }
+
+        else {
+
+            swap = utility.toSwap(binary);
+
+        }
        
-        console.log(swap);
+        console.log('After swapping resultant number = '+swap);
 
         let power = utility.isPower(swap);
 

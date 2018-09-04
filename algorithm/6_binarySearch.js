@@ -1,3 +1,29 @@
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node 6_binarySearch.js 
+ *                      
+ * 
+ *  Purpose         : it is used to search the given string in a file.
+ * 
+ *  @description    : This will read a file and asks the user to enter a string, by using binary search operation
+ *                    it displays the result weather it is found in the file or not.
+ * 
+ *  @file           : 6_binarySearch.js
+ *  @overview       : Gives weather the given string is present in a file or not and if it is displays the position 
+ *                    position of the given string.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 30-08-2018
+ *  @parameter      : String.
+ ******************************************************************************/
+
+
+ /********************************************************************************
+  *  Algorithm      : Take a string from the user.
+  *                 : Read the required file to search.
+  *                 : perform binary search operation to find the given string.
+  *                 : Display the string with the position it is present .
+  *                 
+  ************************************************************************************/
 let prompt = require('prompt-sync')();
 
 fs = require('fs')

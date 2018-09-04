@@ -16,7 +16,7 @@
 
 
  /********************************************************************************
-  *  Algorithm      : Take required input to perform the operation.
+  *  Algorithm      : Take input from the user to perform the operation required.
   *                 : calculate elapsed time to perform the operation and store it in an array.
   *                 : print the elapsed time in descending order.
   *                 
