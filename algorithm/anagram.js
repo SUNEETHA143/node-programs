@@ -38,7 +38,7 @@ function anagrams() {
     let str1 = prompt('String1 ');
     let str2 = prompt('String2 ');
 
-    if(str1.search(re) == -1 && str2.search(re2) == -1) {
+    if(str1.search(re) == -1 && str2.search(re2) == -1 && str2.search(re) == -1 && str1.search(re2) == -1) {
 
         str1 = str1.toUpperCase();
         str2 = str2.toUpperCase();

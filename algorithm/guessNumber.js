@@ -35,7 +35,7 @@ function guessNumber() {
     //let type = typeof(number);
     //console.log(type);
     
-    if(number.search(re1)== -1 && number.search(re2) == -1) {
+    /*if(number.search(re1)== -1 && number.search(re2) == -1) {
 
         utility.guessNumber(number);
 
@@ -44,7 +44,8 @@ function guessNumber() {
     else {
         console.log('Give an integer to guess ur number :');
         
-    }
+    }*/
+    utility.guessNumber(number);
     
 }
 
