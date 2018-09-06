@@ -38,6 +38,10 @@ function change() {
 
         utility.change(integer);
     }
+    else {
+        console.log('please enter valid amount');
+        
+    }
 
 }
 

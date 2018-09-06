@@ -1,12 +1,12 @@
 /******************************************************************************
- *  Execution       : 1. default node         cmd> node 8_bubbleSort.js 
+ *  Execution       : 1. default node         cmd> node bubbleSort.js 
  *                      
  * 
  *  Purpose         : To sort given integers in an array.
  * 
  *  @description    : This will accept integers in array format and sorting them by using bubble sort algorithm.
  * 
- *  @file           : 8_bubbleSort.js
+ *  @file           : bubbleSort.js
  *  @overview       : Sorts the given integers in an array.
  *  @author         : BridgeLabz <admin@bridgelabz.com>
  *  @version        : 1.0
@@ -26,7 +26,7 @@
 let prompt = require('prompt-sync')();
 const utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/algorithmUtility.js'); 
 
-let re1 = /[0-9]/g;
+let re1 = /[a-zA-z]/g;
 let re2 = /[!@#$%^&*().<>+-/*"'`~]/g;
 
 function bubbleSort() {

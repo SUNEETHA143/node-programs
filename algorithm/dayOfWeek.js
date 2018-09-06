@@ -44,16 +44,16 @@ function dayOfWeek() {
             // checking weather the year if leap year or not
             if(year % 4 == 0 && (year % 100 !==0 || year % 400 ==0)) { 
                
-              if(day>0 && day <32 && month <13) {
+                if(day>0 && day <32 && month <13) {
 
-                utility.dayOfWeek(day, month, year);
+                    utility.dayOfWeek(day, month, year);
 
-              }
+                }
 
-              else {
-                console.log('Enter valid date');
+                else {
+                  console.log('Enter valid date');
                 
-              }
+                }
               
 
             }

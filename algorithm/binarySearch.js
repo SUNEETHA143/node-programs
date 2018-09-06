@@ -1,5 +1,5 @@
 /******************************************************************************
- *  Execution       : 1. default node         cmd> node 6_binarySearch.js 
+ *  Execution       : 1. default node         cmd> node binarySearch.js 
  *                      
  * 
  *  Purpose         : it is used to search the given string in a file.
@@ -7,7 +7,7 @@
  *  @description    : This will read a file and asks the user to enter a string, by using binary search operation
  *                    it displays the result weather it is found in the file or not.
  * 
- *  @file           : 6_binarySearch.js
+ *  @file           : binarySearch.js
  *  @overview       : Gives weather the given string is present in a file or not and if it is displays the position 
  *                    position of the given string.
  *  @author         : BridgeLabz <admin@bridgelabz.com>

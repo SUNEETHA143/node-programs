@@ -1,12 +1,12 @@
 /******************************************************************************
- *  Execution       : 1. default node         cmd> node 1_Anagram.js 
+ *  Execution       : 1. default node         cmd> node Anagram.js 
  *                      
  * 
  *  Purpose         : To check given strings are anagrams..?
  * 
  *  @description    : It accepts only string values and Display weather they are anagram or not.
  * 
- *  @file           : 1_Anagram.js
+ *  @file           : Anagram.js
  *  @overview       : Accepts only string values and not accepts any numbers or special characters.
  *  @author         : BridgeLabz <admin@bridgelabz.com>
  *  @version        : 1.0
