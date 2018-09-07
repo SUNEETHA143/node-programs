@@ -1,6 +1,6 @@
 fs = require('fs');
 let prompt = require('prompt-sync')();
-var data = fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/algorithm/file2.txt','utf8');
+var data = fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/stringFile.txt','utf8');
 var utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/linkedList.js')
 let dataWrite = '';
 
@@ -28,30 +28,32 @@ let search = prompt('Enter string to search');
 
 if(ll.indexOf(search) == -1) {
 
+    console.log('String you are searching not found in the file.');
+
     ll.add(search);
+
+    console.log('String added into the list');
 
 }
 
 else{
 
+    console.log('String found at position :'+ (ll.indexOf(search)+1));
+
     ll.removeFrom(ll.indexOf(search));
+
+    console.log('String removed from the list');
 
 }
 
 dataWrite = ll.printList();
 
+console.log('Elements in the list are :');
+
 console.log(dataWrite);
+//console.log(ll.head)
 
-
-try {
-    fs.appendFileSync('/home/bridgeit/ram mohan reddy/node programs/algorithm/file2.txt', dataWrite,'utf8');
-    console.log('The "data to append" was appended to file!');
-  } catch (err) {
-    /* Handle the error */
-
-    console.log('data not copied');
-    
-  }
+  fs.writeFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/stringFile.txt', dataWrite)
 
 }
 
