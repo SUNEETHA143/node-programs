@@ -153,48 +153,28 @@ printList()
     //console.log(str);
 }
 
-/*insertionSort( headref)  
+/* Takes index as argument and return data at index*/
+GetNth( index) 
+{ 
+    let current = this.head;  
+
+    let count = 0; /* index of Node we are 
+                      currently looking at */
+    while (current != null) 
     { 
-        // Initialize sorted linked list 
-        var sorted = null; 
-        var current = headref; 
-        // Traverse the given linked list and insert every 
-        // node to sorted 
-        while (current != null)  
-        { 
-            // Store next for next iteration 
-             this.next = current.next; 
-            // insert current in sorted linked list 
-            this.sortedInsert(current,sorted); 
-            // Update current 
-            current = next; 
-        } 
-        // Update head_ref to point to sorted linked list 
-        this.head = sorted; 
+        if (count == index) 
+            return current.element; 
+        count++; 
+        current = current.next; 
     } 
 
-    sortedInsert(newnode,sorted)  
-    { 
-        /* Special case for the head end 
-        if (sorted == null || sorted.val >= newnode.val)  
-        { 
-            newnode.next = sorted; 
-            sorted = newnode; 
-        } 
-        else 
-        { 
-            var current = sorted; 
-            /* Locate the node before the point of insertion 
-            while (current.next != null && current.next.val < newnode.val)  
-            { 
-                current = current.next; 
-            } 
-            newnode.next = current.next; 
-            current.next = newnode; 
-        } 
-    } 
+    /* if we get to this line, the caller was asking 
+    for a non-existent element so we assert fail */
+    //assert(false); 
+    return 0; 
+}
 
-    */
+
 }
 
 module.exports = LinkedList;

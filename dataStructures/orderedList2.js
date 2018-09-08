@@ -34,7 +34,7 @@ if(ll.indexOf(search) == -1) {
 
     console.log('Number you are searching not found in the file.');
     /*let index = prompt('enter the position to add the number');*/
-    ll.insertAt(search,index);
+    //ll.insertAt(search,index);
     //ll.add(search);
     console.log('Number added into the list');
 
@@ -52,6 +52,8 @@ else{
     console.log('Number removed from the list');
 
 }
+
+
 
 dataWrite = ll.printList();
 
