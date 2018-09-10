@@ -13,7 +13,7 @@ let re2 = /[!@#$%^&*().<>+-/*"'`~]/g;
 let prime = [];
 
 let anag = [];
-/* Drier program to test above functions*/
+
 function main() 
 { 
 
