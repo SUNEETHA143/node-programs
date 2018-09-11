@@ -1,0 +1,65 @@
+{
+    "Rice": [
+      {
+        "name": "whiteRice",
+        "weight": 50,
+        "price": 40.00
+        
+      },
+      {
+        "name": "brownRice",
+        "weight": 25,
+        "price": 60.00
+        
+      },
+      {
+        "name": "redRice",
+        "weight": 10,
+        "price": 100.00
+       
+      }
+    ],
+
+    "Pulses": [
+        {
+          "name": "greenGram",
+          "weight": 30,
+          "price": 25.00
+          
+        },
+        {
+          "name": "redLentis",
+          "weight": 15,
+          "price": 30.00
+          
+        },
+        {
+          "name": "pigeonPeas",
+          "weight": 10,
+          "price": 50.00
+         
+        }
+      ],
+
+
+    "Wheats": [
+        {
+          "name": "emmerWheat ",
+          "weight": 30,
+          "price": 60.00
+          
+        },
+        {
+          "name": "commonBreadWheat",
+          "weight": 25,
+          "price": 35.00
+          
+        },
+        {
+          "name": "indianDwarfWheat ",
+          "weight": 15,
+          "price": 50.00
+         
+        }
+      ]
+  }

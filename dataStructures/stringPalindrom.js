@@ -38,15 +38,15 @@ function stringPalindrom() {
 
 
         arr1 = removeSpace(arr1);
-        let string ='';
+        let string = '';
 
-        for(let i=0;i<arr1.length;i++){
+        for (let i = 0; i < arr1.length; i++) {
 
-            string = string+arr1[i];
+            string = string + arr1[i];
 
         }
 
-        console.log('\nThe given string is : '+ string);
+        console.log('\nThe given string is : ' + string);
 
         for (let i = 0; i < arr1.length; i++) {
 
@@ -57,7 +57,7 @@ function stringPalindrom() {
         let out = dequeue.printDequeue();
 
 
-        console.log('\nElements in Dequeue are :'+ out);
+        console.log('\nElements in Dequeue are :' + out);
 
         for (let i = 0; i < arr1.length; i++) {
 

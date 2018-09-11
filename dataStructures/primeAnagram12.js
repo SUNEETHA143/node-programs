@@ -15,37 +15,37 @@ let anagN = [];
 function notAnagram() {
 
     let notAnagram = [];
-    
+
     for (let i = 0; i < prime.length; i++) {
 
         if (anag.indexOf(prime[i]) == -1) {
 
             notAnagram.push(prime[i]);
-        }    
+        }
     }
 
     return notAnagram;
 }
 
 
-        function removeDuplicates(arr) {
+function removeDuplicates(arr) {
 
-            let unique_array = [];
-
-
-            for (let i = 0; i < arr.length; i++) {
-
-                if (unique_array.indexOf(arr[i]) == -1) {
-
-                    unique_array.push(arr[i])
-                }
-            }
-
-            return unique_array;
+    let unique_array = [];
 
 
+    for (let i = 0; i < arr.length; i++) {
 
+        if (unique_array.indexOf(arr[i]) == -1) {
+
+            unique_array.push(arr[i])
         }
+    }
+
+    return unique_array;
+
+
+
+}
 
 
 
@@ -85,18 +85,18 @@ function primeAnagram() {
             }
         }
 
-        
+
 
         anag = removeDuplicates(anagram);
 
         anagN = notAnagram();
 
         console.log('Anagrams are .................');
-        
+
         console.log(anag);
-   
+
         console.log('Not Anagrams are .................');
-   
+
         console.log(anagN);
 
         let res = [];

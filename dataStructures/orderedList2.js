@@ -1,81 +1,86 @@
 fs = require('fs');
 let prompt = require('prompt-sync')();
-var data = fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt');
+var data1 = fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt', 'utf-8');
 var utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/linkedList.js')
 let dataWrite = ' ';
 
 function orderList() {
 
-    data = data.toString().split(' ');
+    data1 = data1.toString().split(' ');
 
-    data.sort(function(a, b){
-        return a-b;
-      });
+    var data = [];
 
-var ll = new utility();
+    for (let i = 0; i < data1.length; i++) {
+        if (data1[i] != '') {
 
-for(let i=0;i<data.length;i++) {
-    ll.add(parseInt(data[i]));
-}
-
-console.log(data)
-
-dataWrite = ll.printList();
-
-
-console.log(dataWrite);
-
-
-let search = prompt('Enter number to search :');
-
-//console.log(ll.indexOf(search));
-
-if(ll.indexOf(search) == -1) {
-
-    console.log('Number you are searching not found in the file.');
-    /*let index = prompt('enter the position to add the number');*/
-    //ll.insertAt(search,index);
-    //ll.add(search);
-
-    let index = 0;
-    for(let i =0;i<data.length;i++) {
-
-        if(data[i] < search) {
-
-            index++;
+            data.push(data1[i]);
 
         }
     }
 
-    ll.insertAt(search,index);
+    console.log(data);
 
-    console.log('Number added into the list');    
+    var ll = new utility();
 
-}
-
-else{
-
-    console.log('Number found at position :'+ (ll.indexOf(search)+1));
-
-    ll.removeFrom(ll.indexOf(search));
-
-    console.log('Number removed from the list');
-
-}
+    for (let i = 0; i < data.length; i++) {
+        ll.add(parseInt(data[i]));
+    }
 
 
 
-dataWrite = ll.printList();
-
-console.log('Elements in the list are :');
+    dataWrite = ll.printList();
 
 
-console.log(dataWrite);
+    console.log(dataWrite);
+
+    ll.sortList();
 
 
-fs.writeFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt', dataWrite);
 
-  console.log('\nFinally data present in list added into destination file ');
+    console.log(ll.printList());
+
+
+    let number = prompt('Enter number to search :');
+
+    let search = parseInt(number);
+
+
+    if (ll.indexOf(search) == -1) {
+
+        console.log('\nNumber you are searching not found in the file.');
+
+        ll.sortedInsert(parseInt(search));
+
+        console.log('\nNumber added into the list');
+    }
+
+    else {
+
+        console.log('\nNumber found at position :' + (ll.indexOf(search) + 1));
+
+        ll.removeFrom(ll.indexOf(search));
+
+        console.log('\nNumber removed from the list');
+
+    }
+
+    dataWrite = ll.printList();
+
+    console.log('\nElements in the list are :');
+
+    console.log(dataWrite);
+
+    fs.writeFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt', dataWrite, 'utf-8');
+
+    console.log('\nFinally data present in list added into destination file ');
+
+    /* fs.writeFile("/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt",dataWrite, function(err) {
+         if(err) {
+             return console.log(err);
+         }
+     
+         console.log("The file was saved!");
+     });*/
 
 }
 

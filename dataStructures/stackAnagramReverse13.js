@@ -14,109 +14,108 @@ let prime = [];
 
 let anag = [];
 
-function main() 
-{ 
+function main() {
 
     let num1 = prompt(' Number 1: ');
     let num2 = prompt(' Number 2: ');
 
 
-    if(num1.search(re) == -1 && num2.search(re2) == -1 && num1 >= 0 && num2 > 0 && num1 < 1001 && num2 < 1001) {
-        
-         num1 = parseInt(num1);
-         num2 = parseInt(num2);
-        
-         prime = utility.prime(num1,num2);
+    if (num1.search(re) == -1 && num2.search(re2) == -1 && num1 >= 0 && num2 > 0 && num1 < 1001 && num2 < 1001) {
 
-         console.log('Prime are .................');
-         console.log(prime);
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
 
-         let anagram = [];
-         
-    for(let i=0; i<prime.length-1 ; i++) {
+        prime = utility.prime(num1, num2);
 
-        for(let j=i+1 ; j< prime.length ; j++) {
+        console.log('Prime are .................');
+        console.log(prime);
 
-            index1 = prime[i].toString();
+        let anagram = [];
 
-            index2 = prime[j].toString();
-   
-            let res1 = utility.anagrams(index1,index2);
-   
-            if (res1) {
-                anagram.push(prime[i]);
-                anagram.push(prime[j]);
-            }
+        for (let i = 0; i < prime.length - 1; i++) {
 
-        }
-    }
+            for (let j = i + 1; j < prime.length; j++) {
 
-    
+                index1 = prime[i].toString();
 
-     anag = removeDuplicates(anagram);
+                index2 = prime[j].toString();
 
-     console.log('Anagrams in the range are :' + anag);
-     
+                let res1 = utility.anagrams(index1, index2);
 
-    function removeDuplicates(arr){
+                if (res1) {
+                    anagram.push(prime[i]);
+                    anagram.push(prime[j]);
+                }
 
-        let unique_array = [];
-
-        
-        for(let i = 0;i < arr.length; i++){
-
-            if(unique_array.indexOf(arr[i]) == -1){
-
-                unique_array.push(arr[i])
             }
         }
 
-        return unique_array;
-        
-      
-         
-    }
+
+
+        anag = removeDuplicates(anagram);
+
+        console.log('Anagrams in the range are :' + anag);
+
+
+        function removeDuplicates(arr) {
+
+            let unique_array = [];
+
+
+            for (let i = 0; i < arr.length; i++) {
+
+                if (unique_array.indexOf(arr[i]) == -1) {
+
+                    unique_array.push(arr[i])
+                }
+            }
+
+            return unique_array;
+
+
 
         }
 
-    
-    let llist = new utility1(); 
+    }
 
-    for(let i = 0; i < anag.length; i++) {
 
-        llist.add(anag[i]); 
+    let llist = new utility1();
+
+    for (let i = 0; i < anag.length; i++) {
+
+        llist.add(anag[i]);
 
     }
 
     let res = llist.printList();
 
     console.log(res);
-    
+
     //console.log("Element at index 1 is "+llist.GetNth(1)); 
 
     let stack = new utility3();
 
-    for(let i = 0; i < anag.length; i++) {
+    for (let i = 0; i < anag.length; i++) {
 
         let temp = llist.GetNth(i);
 
         stack.push(temp);
-         
+
 
     }
 
     let out = stack.printStack();
-    console.log('elements in stack are :'+ out);
+    console.log('elements in stack are :' + out);
 
-    for(let i = anag.length; i > 0 ; i--) {
+    for (let i = anag.length; i > 0; i--) {
 
         console.log(stack.pop());
     }
 
 
-    
 
 
-} 
+
+}
 
 main();

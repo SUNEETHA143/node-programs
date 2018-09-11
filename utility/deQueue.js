@@ -51,7 +51,7 @@ class Dequeue {
         return str;
     }
 
-   
+
 }
 
 module.exports = Dequeue;
