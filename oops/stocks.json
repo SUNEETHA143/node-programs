@@ -1,0 +1,22 @@
+{
+    "Stocks": [
+      {
+        "company": "ITC",
+        "shares": 50,
+        "price": 306.80
+        
+      },
+      {
+        "company": "Sun Pharma",
+        "shares": 25,
+        "price": 649.90
+        
+      },
+      {
+        "company": "Adani Ports",
+        "shares": 10,
+        "price": 376.05
+       
+      }
+    ]
+  }
