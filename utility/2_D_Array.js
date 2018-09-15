@@ -1,7 +1,6 @@
 
 module.exports = {
 
-
     checkPrime: function (min1, max1) {
 
         let size = (Math.floor(max1 / 100) + 1);
@@ -12,8 +11,6 @@ module.exports = {
         min = min1;
 
         if (min1 == 0 && max1 >= 100) {
-
-            //max = 99;
 
             max = 100;
         }
@@ -29,10 +26,7 @@ module.exports = {
 
         else {
 
-            // max = ((range+1)*100)-1;
-
             max = ((range + 1) * 100);
-
         }
 
         if (min == 0 || min == 1) {
@@ -40,8 +34,6 @@ module.exports = {
         }
 
         for (let index = range + 1; index <= size; index++) {
-
-            // if( (max-min) < 100 && max <= max1) {
 
             if ((max - min) <= 100 && max <= max1 && (max - min) != 0) {
 
@@ -72,15 +64,11 @@ module.exports = {
 
                 arr1.push(prime);
 
-                // if(max1 - max < 100) {
-
                 if (max1 - max <= 100) {
 
                     range = Math.floor(min / 100);
 
                     min = (min + ((range + 1) * 100) - min);
-
-                    // max = max1-1;
 
                     max = max1;
 
@@ -98,12 +86,10 @@ module.exports = {
 
             }
 
-
-
         }
 
 
-        console.log('\n Prime Numbers in the given range are :')
+        console.log('\n Prime Numbers in the given range are :\n')
         console.log(arr1);
 
     },
@@ -157,12 +143,12 @@ module.exports = {
             var output = this.compare(res1, res2);
 
             if (output) {
-                //console.log('given strings are anagram');
+
                 return true;
             }
 
             else {
-                // console.log('given strings are not anagram');
+
                 return false;
             }
 
@@ -170,7 +156,6 @@ module.exports = {
 
         else {
 
-            //console.log('given strings are not anagram');
             return false;
 
         }

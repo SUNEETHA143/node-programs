@@ -14,18 +14,14 @@ class Dequeue {
     }
 
     removeFront() {
-        // return last element in the Dequeue
-        // and removes it from the stack
-        // Underflow if stack is empty
+        
         if (this.isEmpty())
             return "Underflow";
         return this.items.shift();
     }
 
     removeBack() {
-        // return top most element in the Dequeue
-        // and removes it from the stack
-        // Underflow if stack is empty
+        
         if (this.items.length == 0)
             return "Underflow";
         return this.items.pop();

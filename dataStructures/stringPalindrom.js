@@ -1,3 +1,20 @@
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node stringPalindrom.js 
+ *                      
+ * 
+ *  Purpose         : To check the given string is palindrom or not using dequeue implementation.
+ * 
+ *  @description    : It takes string as an input and splits it into array and and aranges them into 
+ *                    into DEQUEUE and retrieving them from DEQUEUE
+ *                                         
+ * 
+ *  @file           : stringPalindrom.js 
+ *  @overview       : Checks the given string is palindrom or not.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 06-09-2018
+ *  @parameter      : String.
+ ******************************************************************************/
 let prompt = require('prompt-sync')();
 
 let utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/deQueue.js');
@@ -20,6 +37,8 @@ function removeSpace(array) {
 
 }
 
+// Driver Function
+
 function stringPalindrom() {
 
     var dequeue = new utility();
@@ -35,8 +54,7 @@ function stringPalindrom() {
 
 
         arr1 = str1.split('');
-
-
+          
         arr1 = removeSpace(arr1);
         let string = '';
 

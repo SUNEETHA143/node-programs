@@ -1,11 +1,26 @@
-
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node queueAnagram.js.js 
+ *                      
+ * 
+ *  Purpose         : To Implement the Prime anagrams using linked list and Queue.
+ * 
+ *  @description    : Implementing prime anagrams using linked list and Queue. 
+ *                                                            
+ * 
+ *  @file           : queueAnagram.js.js 
+ *  @overview       : Represent the prime numbers which are Anagram in a Queue.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 06-09-2018
+ *  @parameter      : Range.
+ ******************************************************************************/
 
 var utility1 = require('/home/bridgeit/ram mohan reddy/node programs/utility/linkedList.js')
 let prompt = require('prompt-sync')();
 
 let utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/2_D_Array.js');
 
-let utility3 = require('/home/bridgeit/ram mohan reddy/node programs/utility/stack.js');
+let utility3 = require('/home/bridgeit/ram mohan reddy/node programs/utility/queue.js');
 
 let re = /[a-zA-Z]/g;
 let re2 = /[!@#$%^&*().<>+-/*"'`~]/g;
@@ -27,7 +42,7 @@ function main() {
 
         prime = utility.prime(num1, num2);
 
-        console.log('Prime are .................');
+        console.log('\nPrime Numbers are :');
         console.log(prime);
 
         let anagram = [];
@@ -50,11 +65,9 @@ function main() {
             }
         }
 
-
-
         anag = removeDuplicates(anagram);
 
-        console.log('Anagrams in the range are :' + anag);
+        console.log('\nAnagrams in the range are :' + anag);
 
 
         function removeDuplicates(arr) {
@@ -72,12 +85,9 @@ function main() {
 
             return unique_array;
 
-
-
         }
 
     }
-
 
     let llist = new utility1();
 
@@ -91,30 +101,21 @@ function main() {
 
     console.log(res);
 
-    //console.log("Element at index 1 is "+llist.GetNth(1)); 
-
-    let stack = new utility3();
+    let queue = new utility3();
 
     for (let i = 0; i < anag.length; i++) {
 
         let temp = llist.GetNth(i);
 
-        stack.push(temp);
-
+        queue.enqueue(temp);
 
     }
+    console.log('\nelements in Queue are : ');
+    for (let i = 0; i < anag.length; i++) {
 
-    let out = stack.printStack();
-    console.log('elements in stack are :' + out);
+        console.log(queue.dequeue(i));
 
-    for (let i = anag.length; i > 0; i--) {
-
-        console.log(stack.pop());
     }
-
-
-
-
 
 }
 

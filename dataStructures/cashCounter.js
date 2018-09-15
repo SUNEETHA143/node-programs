@@ -1,4 +1,19 @@
-
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node cashCounter.js 
+ *                      
+ * 
+ *  Purpose         : To maintain the order of visitors near the cash counter.
+ * 
+ *  @description    : This accepts the name of the customers and stores in Queue and executes
+ *                    operation on FIFO based Scenario.                     
+ * 
+ *  @file           : cashCounter.js 
+ *  @overview       : maintains tha queue near cash counter.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 06-09-2018
+ *  @parameter      : Number of custoners and Names of customers.
+ ******************************************************************************/
 let prompt = require('prompt-sync')();
 
 var utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/queue.js');
@@ -51,7 +66,7 @@ class Account {
 
 }
 
-
+// Driver function
 
 function cashCounter() {
 
@@ -67,7 +82,7 @@ function cashCounter() {
 
     }
 
-    console.log('The persons in que are : ' + queue.printQueue());
+    console.log('\nThe persons in queue are : ' + queue.printQueue());
 
     for (let i = 0; i < size; i++) {
 
@@ -75,7 +90,7 @@ function cashCounter() {
 
         var name = current;
 
-        console.log('Hi..! ' + name);
+        console.log('\nHi..! ' + name);
 
         var accountNo = prompt('Will you please enter your account number :');
 
@@ -91,7 +106,6 @@ function cashCounter() {
 
         else if (action == 2) {
 
-
             var amount = prompt('Enter amount to be withdrawn :');
 
             transaction.withDraw(accountNo, name, parseInt(amount));
@@ -100,14 +114,12 @@ function cashCounter() {
 
         else if (action == 3) {
 
-
             transaction.checkBalance(accountNo, name);
 
         }
 
 
     }
-
 
 }
 

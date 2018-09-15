@@ -1,4 +1,21 @@
-
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node hashingFunction.js 
+ *                      
+ * 
+ *  Purpose         : To check the given number weather it is present in file or not.
+ * 
+ *  @description    : Accepts the data from the file and performs the required operation, if number
+ *                    number present in file delete the number or else added into file.
+ *                    
+ *                                         
+ * 
+ *  @file           : hashingFunction.js 
+ *  @overview       : Checks the given Number present in file or not and performs required operation.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 06-09-2018
+ *  @parameter      : Number.
+ ******************************************************************************/
 
 fs = require('fs');
 let prompt = require('prompt-sync')();
@@ -23,11 +40,9 @@ function hashing() {
 
     data = data.sort();
 
-    console.log();
+    console.log('\n Data present in file are :');
 
-    console.log(data);
-
-    console.log();
+    console.log('\n' + data + '\n');
 
     var find = prompt('Eneter a Number to search :');
 
@@ -55,8 +70,6 @@ function hashing() {
 
     const map1 = data.map(x => x % (data.length + 1));
 
-    //console.log(map1);
-
     for (let i = 0; i <= data.length; i++) {
 
         let str = '';
@@ -79,7 +92,6 @@ function hashing() {
     }
 
     console.log(result);
-
 
     for (let i = 0; i < data.length; i++) {
 

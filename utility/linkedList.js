@@ -159,9 +159,6 @@ class LinkedList {
             current = current.next;
         }
 
-        /* if we get to this line, the caller was asking 
-        for a non-existent element so we assert fail */
-        //assert(false); 
         return 0;
     }
 
@@ -201,8 +198,7 @@ class LinkedList {
             current1 = current.next;
         }
 
-        console.log('List sorted')
-
+        console.log('\nList sorted\n');
     }
 
     /* function to insert a element in a list. */

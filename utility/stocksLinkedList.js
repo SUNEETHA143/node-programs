@@ -80,7 +80,6 @@ class LinkedList {
             this.size++;
         }
     }
-
     // removes an element from the
     // specified location
     removeFrom(index) {
@@ -152,18 +151,14 @@ class LinkedList {
     GetNth(index) {
         let current = this.head;
 
-        let count = 0; /* index of Node we are 
-                      currently looking at */
+        let count = 0; 
         while (current != null) {
             if (count == index)
                 return current.element;
             count++;
             current = current.next;
         }
-
-        /* if we get to this line, the caller was asking 
-        for a non-existent element so we assert fail */
-        //assert(false); 
+ 
         return 0;
     }
 

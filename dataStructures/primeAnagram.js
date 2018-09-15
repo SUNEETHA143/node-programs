@@ -1,4 +1,21 @@
 
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node primeAnagram.js 
+ *                      
+ * 
+ *  Purpose         : To represent the prime numbers which are Anagram and not Anagram in 2D array.
+ * 
+ *  @description    : Represents prime numbers in the given range Which are anagrams and not anagrams in 2D array, 
+ *                    in the given range.
+ *                                         
+ * 
+ *  @file           : primeAnagram.js 
+ *  @overview       : Represent the prime numbers which are Anagram and not Anagram in a 2D Array in the given range.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 06-09-2018
+ *  @parameter      : Range.
+ ******************************************************************************/
 let prompt = require('prompt-sync')();
 
 let utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/2_D_Array.js');
@@ -42,12 +59,7 @@ function removeDuplicates(arr) {
     }
 
     return unique_array;
-
-
-
 }
-
-
 
 function primeAnagram() {
 

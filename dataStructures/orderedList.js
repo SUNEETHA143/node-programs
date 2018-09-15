@@ -1,3 +1,20 @@
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node orderedList.js 
+ *                      
+ * 
+ *  Purpose         : To sort the element present in linked list and to place the element in required positon.
+ * 
+ *  @description    : It accepts data from the file, stores elements into linked list, sorts the list, performs searching operation
+ *                    and rearranges the list.
+ * 
+ *  @file           : unorderedList.js
+ *  @overview       : Implementing orderd linked list.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 06-09-2018
+ *  @parameter      : Number
+ ******************************************************************************/
+
 fs = require('fs');
 let prompt = require('prompt-sync')();
 var data1 = fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt', 'utf-8');
@@ -18,7 +35,8 @@ function orderList() {
         }
     }
 
-    console.log(data);
+    console.log('\nData present in the file : ' + data1);
+    //console.log(data);
 
     var ll = new utility();
 
@@ -27,7 +45,7 @@ function orderList() {
     }
 
 
-
+    console.log('\nData added into linked list :');
     dataWrite = ll.printList();
 
 
@@ -74,13 +92,6 @@ function orderList() {
 
     console.log('\nFinally data present in list added into destination file ');
 
-    /* fs.writeFile("/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt",dataWrite, function(err) {
-         if(err) {
-             return console.log(err);
-         }
-     
-         console.log("The file was saved!");
-     });*/
 
 }
 

@@ -1,9 +1,28 @@
+
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node stackAnagramReverse.js 
+ *                      
+ * 
+ *  Purpose         : To Implement the Prime anagrams using linked list and stack.
+ * 
+ *  @description    : Implementing prime anagrams using linked list and stack, Finally printing 
+ *                    them in reverse order.
+ *                                                            
+ * 
+ *  @file           : stackAnagramReverse.js 
+ *  @overview       : Represent the prime numbers which are Anagram in reverse order.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 06-09-2018
+ *  @parameter      : Range.
+ ******************************************************************************/
+
 var utility1 = require('/home/bridgeit/ram mohan reddy/node programs/utility/linkedList.js')
 let prompt = require('prompt-sync')();
 
 let utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/2_D_Array.js');
 
-let utility3 = require('/home/bridgeit/ram mohan reddy/node programs/utility/queue.js');
+let utility3 = require('/home/bridgeit/ram mohan reddy/node programs/utility/stack.js');
 
 let re = /[a-zA-Z]/g;
 let re2 = /[!@#$%^&*().<>+-/*"'`~]/g;
@@ -11,7 +30,7 @@ let re2 = /[!@#$%^&*().<>+-/*"'`~]/g;
 let prime = [];
 
 let anag = [];
-/* Drier program to test above functions*/
+
 function main() {
 
     let num1 = prompt(' Number 1: ');
@@ -25,7 +44,7 @@ function main() {
 
         prime = utility.prime(num1, num2);
 
-        console.log('Prime are .................');
+        console.log('\nPrime Numbers are :');
         console.log(prime);
 
         let anagram = [];
@@ -48,12 +67,7 @@ function main() {
             }
         }
 
-
-
         anag = removeDuplicates(anagram);
-
-        console.log('Anagrams in the range are :' + anag);
-
 
         function removeDuplicates(arr) {
 
@@ -86,24 +100,29 @@ function main() {
     }
 
     let res = llist.printList();
-
-    console.log(res);
+    console.log('\nAnagrams in the range are :' + res);
 
     //console.log("Element at index 1 is "+llist.GetNth(1)); 
 
-    let queue = new utility3();
+    let stack = new utility3();
 
     for (let i = 0; i < anag.length; i++) {
 
         let temp = llist.GetNth(i);
 
-        queue.enqueue(temp);
-
+        stack.push(temp);
 
     }
 
-    let out = queue.printQueue();
-    console.log('elements in Queue are :' + out);
+    let out = stack.printStack();
+    console.log('\nElements in stack are :' + out);
+    console.log('\nAnagrams in reverse order :');
+
+    for (let i = anag.length; i > 0; i--) {
+
+        console.log(stack.pop());
+    }
+
 }
 
 main();

@@ -1,8 +1,25 @@
+/******************************************************************************
+ *  Execution       : 1. default node         cmd> node unorderedList.js 
+ *                      
+ * 
+ *  Purpose         : To search the element present in linked list.
+ * 
+ *  @description    : It accepts data from the file, stores elements into linked list, performs searching operation
+ *                    and rearranges the list.
+ * 
+ *  @file           : unorderedList.js
+ *  @overview       : Implementing unorderd linked list.
+ *  @author         : BridgeLabz <admin@bridgelabz.com>
+ *  @version        : 1.0
+ *  @since          : 06-09-2018
+ *  @parameter      : String
+ ******************************************************************************/
+
 fs = require('fs');
 let prompt = require('prompt-sync')();
 var data1 = fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/stringFile.txt', 'utf8');
 var utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/linkedList.js')
-//let dataWrite = '';
+
 
 let dataWrite;
 
@@ -11,9 +28,6 @@ function unOrderList() {
     console.log('\nData present in the file : ' + data1);
 
     data1 = data1.toString().split(' ');
-
-    console.log(data1);
-
 
     var ll = new utility();
 
@@ -40,8 +54,6 @@ function unOrderList() {
     console.log('\n' + dataWrite + '\n');
 
     let search = prompt('Enter string to search :');
-
-    //console.log(ll.indexOf(search));
 
     if (ll.indexOf(search) == -1) {
 
