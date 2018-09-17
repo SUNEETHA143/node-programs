@@ -1,1 +1,29 @@
-{"Person":[{"firstName":"Rama Mohan","lastName":"Lingaladinne","address":{"city":"Nellore","state":"Andhra Pradesh","zip":524228},"phonenumber":9440223929},{"firstName":"Veerandra Reddy","lastName":"Cheemala","address":{"city":"Guntur","state":"Andhra Pradesh","zip":522001},"phonenumber":9182827202},{"firstName":"Pavitra","lastName":"Korapati","address":{"city":"Nandyala","state":"Andhra Pradesh","zip":"563214"},"phonenumber":"789456123"}]}
+{
+    "Person": [
+      {
+        "firstName" : "Rama Mohan",
+         "lastName" : "Lingaladinne",
+         "address" : {
+             "city" : "Nellore",
+             "state" : "Andhra Pradesh",
+             "zip" : 522001
+         },
+
+         "phonenumber" : 9440223929
+        
+      },
+      {
+        "firstName" : "Veerandra Reddy",
+         "lastName" : "Cheemala",
+         "address" : {
+             "city" : "Guntur",
+             "state" : "Andhra Pradesh",
+             "zip" : 424228
+         },
+
+         "phonenumber" : 9182827202
+        
+      }
+      
+    ]
+  }

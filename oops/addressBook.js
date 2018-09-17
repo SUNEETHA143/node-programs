@@ -1,5 +1,4 @@
 let prompt = require('prompt-sync')();
-
 const utility = require('/home/bridgeit/ram mohan reddy/node programs/oops/editAddressBook.js');
 
 function addressBook() {
@@ -15,11 +14,9 @@ function addressBook() {
         switch (choice) {
             case 1:
                 book.add();
-
                 break;
 
             case 2:
-
                 while (1) {
                     console.log('1 : Delete \
                     2 : Update \

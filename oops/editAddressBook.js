@@ -1,5 +1,4 @@
 let prompt = require('prompt-sync')();
-
 var fs = require('fs');
 var obj = JSON.parse(fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/oops/addressData.json', 'utf8'));
 class Open {
@@ -58,7 +57,7 @@ class Open {
                 console.log('1 : Address \
                 2 : Phone number \
                 3 : Address and Phone number');
-                console.log();    
+                console.log();
                 let choice = parseInt(prompt('Enter Choice : '));
 
                 switch (choice) {
@@ -121,7 +120,7 @@ class Open {
                         console.log(this.array[i]);
                         break;
 
-                        default:
+                    default:
                         console.log('Invalid choosing :');
                         break;
                 }
@@ -130,16 +129,39 @@ class Open {
     }
 
     arrange() {
-        this.array.sort(this.compare);
-        console.log('\nSorted according to last name :');        
-        console.log(this.array);
+
+        console.log('1 : Sort By Last Name \
+        2 : Sort By Zip-Code');
+        console.log();
+        let choice = parseInt(prompt('Enter Choice : '));
+        switch (choice) {
+            case 1:
+                this.array.sort(this.compare1);
+                console.log('\nSorted according to last name :');
+                console.log(this.array);
+
+                break;
+            case 2:
+
+                this.array.sort(this.compare2);
+                console.log('\nSorted according to Zip-Code :');
+                console.log(this.array);
+
+                break;
+
+            default:
+                console.log('Invalid Choice ');
+
+                break;
+        }
+
     }
 
     search() {
         let lastName = prompt('Enter Last Name of the person to search  : ');
         for (var i = 0; i < this.array.length; i++) {
             if (this.array[i].lastName === lastName) {
-                console.log('\nYour searched address :');           
+                console.log('\nYour searched address :');
                 console.log(this.array[i]);
             }
         }
@@ -149,15 +171,23 @@ class Open {
         let user1 = {
             Person: this.array,
         };
-        console.log('Successfully saved into the File ');    
+        console.log('Successfully saved into the File ');
         var json = JSON.stringify(user1);
         fs.writeFileSync('/home/bridgeit/ram mohan reddy/node programs/oops/addressData.json', json, 'utf8');
     }
 
-    compare(a, b) {
+    sort1(a, b) {
         if (a.lastName < b.lastName)
             return -1;
         if (a.lastName > b.lastName)
+            return 1;
+        return 0;
+    }
+
+    sort2(a, b) {
+        if (a.address.zip < b.address.zip)
+            return -1;
+        if (a.address.zip > b.address.zip)
             return 1;
         return 0;
     }
