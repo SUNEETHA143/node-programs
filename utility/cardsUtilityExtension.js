@@ -144,7 +144,7 @@ class Cards {
             }
 
 
-            var sorter = this.MySort('A23456798910JKQ');
+            var sorter = this.mySort('A23456798910JKQ');
 
             name.sort(sorter);
 
@@ -168,7 +168,7 @@ class Cards {
         return queue.printQueue();
     }
 
-    MySort(alphabet) {
+    mySort(alphabet) {
         return function (a, b) {
             var index_a = alphabet.indexOf(a[0]),
                 index_b = alphabet.indexOf(b[0]);

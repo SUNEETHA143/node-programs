@@ -19,6 +19,8 @@ fs = require('fs');
 let prompt = require('prompt-sync')();
 var data1 = fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt', 'utf-8');
 var utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/linkedList.js')
+var re1 = /[a-zA-Z]/g;
+var re2 = /[!@#$%^&*().<>+-/*"'`~]/g;
 let dataWrite = ' ';
 
 function orderList() {
@@ -36,7 +38,6 @@ function orderList() {
     }
 
     console.log('\nData present in the file : ' + data1);
-    //console.log(data);
 
     var ll = new utility();
 
@@ -44,57 +45,57 @@ function orderList() {
         ll.add(parseInt(data[i]));
     }
 
-
     console.log('\nData added into linked list :');
     dataWrite = ll.printList();
-
 
     console.log(dataWrite);
 
     ll.sortList();
 
-
-
     console.log(ll.printList());
-
 
     let number = prompt('Enter number to search :');
 
-    let search = parseInt(number);
+    if (number.search(re1) == -1 && number.search(re2) == -1) {
 
+        let search = parseInt(number);
 
-    if (ll.indexOf(search) == -1) {
+        if (ll.indexOf(search) == -1) {
 
-        console.log('\nNumber you are searching not found in the file.');
+            console.log('\nNumber you are searching not found in the file.');
 
-        ll.sortedInsert(parseInt(search));
+            ll.sortedInsert(parseInt(search));
 
-        console.log('\nNumber added into the list');
+            console.log('\nNumber added into the list');
+        }
+
+        else {
+
+            console.log('\nNumber found at position :' + (ll.indexOf(search) + 1));
+
+            ll.removeFrom(ll.indexOf(search));
+
+            console.log('\nNumber removed from the list');
+
+        }
+
+        dataWrite = ll.printList();
+
+        console.log('\nElements in the list are :');
+
+        console.log(dataWrite);
+
+        fs.writeFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt', dataWrite, 'utf-8');
+
+        console.log('\nFinally data present in list added into destination file ');
     }
 
     else {
-
-        console.log('\nNumber found at position :' + (ll.indexOf(search) + 1));
-
-        ll.removeFrom(ll.indexOf(search));
-
-        console.log('\nNumber removed from the list');
+        console.log('\nEnter valid integer ..!');
 
     }
 
-    dataWrite = ll.printList();
-
-    console.log('\nElements in the list are :');
-
-    console.log(dataWrite);
-
-    fs.writeFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/numbersFile.txt', dataWrite, 'utf-8');
-
-    console.log('\nFinally data present in list added into destination file ');
-
-
 }
-
 orderList();
 
 

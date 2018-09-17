@@ -8,13 +8,13 @@ function dataProcessing() {
 
     while (1) {
 
-        console.log('\nEneter 1 -> to view ur existing portfolio :');
-        console.log('\nEneter 2 -> to view ur net value of all the stocks :');
-        console.log('\nEneter 3 -> to purchase stocks :');
-        console.log('\nEneter 4 -> to sell stocks :');
-        console.log('\nEneter 5 -> to save the changes made in this Session :');
-        console.log('\nEneter 6 -> to view report : \n');
-        console.log('\nEneter 7 -> to Terminate : \n');
+        console.log('\n 1 : to view ur existing portfolio :');
+        console.log('\n 2 : to view ur net value of all the stocks :');
+        console.log('\n 3 : to purchase stocks :');
+        console.log('\n 4 : to sell stocks :');
+        console.log('\n 5 : to save the changes made in this Session :');
+        console.log('\n 6 : to view report : \n');
+        console.log('\n 7 : to Terminate : \n');
 
 
         var choice = parseInt(prompt('Enter choice : '));

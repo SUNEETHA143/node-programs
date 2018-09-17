@@ -20,7 +20,8 @@ let prompt = require('prompt-sync')();
 var data1 = fs.readFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/stringFile.txt', 'utf8');
 var utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/linkedList.js')
 
-
+var re1 = /[0-9]/g;
+var re2 = /[!@#$%^&*().<>+-/*"'`~]/g;
 let dataWrite;
 
 function unOrderList() {
@@ -55,41 +56,45 @@ function unOrderList() {
 
     let search = prompt('Enter string to search :');
 
-    if (ll.indexOf(search) == -1) {
+    if (search.search(re1) == -1 && search.search(re2) == -1) {
 
-        console.log('\nString you are searching not found in the file.');
+        if (ll.indexOf(search) == -1) {
 
-        ll.add(search);
+            console.log('\nString you are searching not found in the file.');
 
-        console.log('\nString added into the list');
+            ll.add(search);
+
+            console.log('\nString added into the list');
+
+        }
+
+        else {
+
+            console.log('\nString found at position :' + (ll.indexOf(search) + 1));
+
+            ll.removeFrom(ll.indexOf(search));
+
+            console.log('\nString removed from the list');
+
+        }
+
+        dataWrite = ll.printList();
+
+        console.log('\nElements in the list are :');
+
+        console.log('\n' + dataWrite);
+
+        fs.writeFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/stringFile.txt', dataWrite, 'utf-8');
+
+        console.log('\nFinally data present in list added into destination file ');
 
     }
 
     else {
 
-        console.log('\nString found at position :' + (ll.indexOf(search) + 1));
-
-        ll.removeFrom(ll.indexOf(search));
-
-        console.log('\nString removed from the list');
+        console.log('\nEnter valid string ..!');
 
     }
-
-
-
-    dataWrite = ll.printList();
-
-
-    console.log('\nElements in the list are :');
-
-
-    console.log('\n' + dataWrite);
-
-    fs.writeFileSync('/home/bridgeit/ram mohan reddy/node programs/dataStructures/stringFile.txt', dataWrite, 'utf-8');
-
-    console.log('\nFinally data present in list added into destination file ');
-
-
 }
 
 unOrderList();

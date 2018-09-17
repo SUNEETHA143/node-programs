@@ -20,54 +20,60 @@ let prompt = require('prompt-sync')();
 
 var utility = require('/home/bridgeit/ram mohan reddy/node programs/utility/stack.js');
 
+var re1 = /[a-zA-Z]/g;
+var re2 = /[!@#$^&<>{}"'`~]/g;
 function expression() {
 
 
     let data = prompt('enter expression');
 
-    data = data.toString().split('');
+    if (data.search(re1) == -1 && data.search(re2) == -1) {
+        data = data.toString().split('');
 
-    let stack = new utility();
+        let stack = new utility();
 
-    let count1 = 0;
+        let count1 = 0;
 
-    let count2 = 0;
+        let count2 = 0;
 
-    for (let i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
 
-        switch (data[i]) {
+            switch (data[i]) {
 
-            case '(': stack.push(data[i]);
+                case '(': stack.push(data[i]);
 
-                count1++;
+                    count1++;
 
-                break;
+                    break;
 
-            case ')': stack.pop();
+                case ')': stack.pop();
 
-                count2++;
+                    count2++;
 
-                break;
+                    break;
 
-            default:
+                default:
 
-                break;
+                    break;
+            }
+        }
+
+        if (stack.isEmpty() && count1 == count2) {
+
+            console.log('\nThe given Expression is balanced.');
+
+        }
+
+        else {
+
+            console.log('\nThe given Expression is not balanced.');
         }
     }
-
-    console.log(stack.printStack());
-
-    if (stack.isEmpty() && count1 == count2) {
-
-        console.log('The given Expression is balanced.');
-
-    }
-
     else {
 
-        console.log('The given Expression is not balanced.');
-    }
+        console.log('\nEnter Valid Expression :');
 
+    }
 
 }
 

@@ -87,19 +87,14 @@ function cashCounter() {
     for (let i = 0; i < size; i++) {
 
         var current = queue.dequeue();
-
         var name = current;
-
         console.log('\nHi..! ' + name);
 
-        var accountNo = prompt('Will you please enter your account number :');
-
+        //var accountNo = prompt('Will you please enter your account number :');
         var action = prompt('Enter action to be performed : 1 for Deposit or 2 for Withdraw or 3 for Check balance ');
 
         if (action == 1) {
-
             var amount = prompt('Enter amount to be added :');
-
             transaction.add(accountNo, name, parseInt(amount));
 
         }
